@@ -1,0 +1,539 @@
+/* Estilos para o painel administrativo - Tema Barbearia */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--black-soft) 100%);
+  padding: 28px;
+  border-radius: 20px;
+  border: 2px solid var(--primary-brown);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, var(--gray-dark), var(--black-light));
+  border: 2px solid var(--primary-brown);
+  padding: 20px 28px;
+  border-radius: 16px;
+  min-width: 100px;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+}
+
+.statNumber {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  font-family: 'Playfair Display', serif;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  background: white;
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.viewModes {
+  display: flex;
+  gap: 8px;
+}
+
+.viewButton {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #4b5563;
+}
+
+.viewButton:hover {
+  background: #e5e7eb;
+}
+
+.viewButton.active {
+  background: #a855f7;
+  color: white;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+}
+
+.filterInput,
+.filterSelect {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.9rem;
+}
+
+.filterInput:focus,
+.filterSelect:focus {
+  outline: none;
+  border-color: #a855f7;
+}
+
+.loading,
+.empty {
+  text-align: center;
+  padding: 48px;
+  color: #6b7280;
+  font-size: 1.1rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.agendamentosList {
+  display: grid;
+  gap: 16px;
+}
+
+.agendamentoCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.agendamentoCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.agendamentoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.clienteInfo h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.clienteInfo p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.telefoneLink {
+  cursor: pointer;
+  color: #059669 !important;
+  font-weight: 500;
+  transition: all 0.2s;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.telefoneLink:hover {
+  background: #ecfdf5;
+  color: #047857 !important;
+  transform: translateY(-1px);
+}
+
+.status {
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.agendamentoDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.detail {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.detail strong {
+  color: #1f2937;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.actionButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.actionButton.confirm {
+  background: #10b981;
+  color: white;
+}
+
+.actionButton.confirm:hover {
+  background: #059669;
+}
+
+.actionButton.cancel {
+  background: #f59e0b;
+  color: white;
+}
+
+.actionButton.cancel:hover {
+  background: #d97706;
+}
+
+.actionButton.delete {
+  background: #ef4444;
+  color: white;
+}
+
+.actionButton.delete:hover {
+  background: #dc2626;
+}
+
+/* Abas */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tab {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  color: #8b5cf6;
+  background-color: #f8fafc;
+}
+
+.tabActive {
+  color: #8b5cf6;
+  border-bottom-color: #8b5cf6;
+  background-color: #f8fafc;
+}
+
+/* Seção de Disponibilidade */
+.disponibilidade {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.adicionarIndisponivel {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+}
+
+.adicionarIndisponivel h2 {
+  margin: 0 0 20px 0;
+  color: #1f2937;
+  font-size: 20px;
+}
+
+.formIndisponivel {
+  display: flex;
+  gap: 16px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 200px;
+}
+
+.inputGroup label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 14px;
+}
+
+.inputData,
+.inputMotivo,
+.inputSelect {
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.inputData:focus,
+.inputMotivo:focus,
+.inputSelect:focus {
+  outline: none;
+  border-color: #8b5cf6;
+}
+
+.inputMotivo {
+  min-width: 300px;
+}
+
+.botaoAdicionar {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: fit-content;
+}
+
+.botaoAdicionar:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+}
+
+/* Lista de dias indisponíveis */
+.listaIndisponiveis h2 {
+  margin: 0 0 20px 0;
+  color: #1f2937;
+  font-size: 20px;
+}
+
+.diasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 16px;
+}
+
+.diaCard {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #ef4444;
+}
+
+.diaInfo {
+  flex: 1;
+}
+
+.diaData {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 16px;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.diaHorario {
+  font-weight: 500;
+  color: #059669;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.diaMotivo {
+  color: #6b7280;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.botaoEditar {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botaoEditar:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-1px);
+}
+
+.botaoRemover {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botaoRemover:hover {
+  background: linear-gradient(135deg, #4b5563, #374151);
+  transform: translateY(-1px);
+}
+
+.botaoCancelar {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: fit-content;
+}
+
+.botaoCancelar:hover {
+  background: linear-gradient(135deg, #4b5563, #374151);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 16px;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .controls {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .viewModes {
+    justify-content: center;
+  }
+  
+  .filters {
+    justify-content: center;
+  }
+  
+  .agendamentoHeader {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .agendamentoDetails {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsivo para disponibilidade */
+  .formIndisponivel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .inputGroup {
+    min-width: unset;
+  }
+  
+  .inputMotivo {
+    min-width: unset;
+  }
+  
+  .diasGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .diaCard {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .diaCard > div:last-child {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .tabs {
+    padding-bottom: 8px;
+  }
+  
+  .tab {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}

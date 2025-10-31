@@ -1,0 +1,134 @@
+/* Estilos para login administrativo - Tema Barbearia */
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--primary-brown) 100%);
+  padding: 20px;
+}
+
+.loginCard {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--black-soft) 100%);
+  border: 2px solid var(--primary-brown);
+  padding: 48px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.loginCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-brown), var(--accent-gold), var(--primary-brown));
+}
+
+.loginCard h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  font-family: 'Playfair Display', serif;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.loginCard p {
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.passwordInput {
+  padding: 16px 20px;
+  border: 2px solid var(--gray-medium);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: var(--black-light);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.passwordInput:focus {
+  outline: none;
+  border-color: var(--primary-brown);
+  background: var(--black-soft);
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.loginButton {
+  background: linear-gradient(90deg, #a855f7 0%, #6366f1 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.loginButton:hover {
+  transform: translateY(-1px);
+}
+
+.error {
+  color: #ef4444;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.hint {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
+}
+
+/* Barra de logout */
+.logoutBar {
+  background: #1f2937;
+  color: white;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logoutBar span {
+  font-weight: 500;
+}
+
+.logoutButton {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logoutButton:hover {
+  background: #dc2626;
+}

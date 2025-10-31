@@ -1,0 +1,17 @@
+{
+  "name": "barbearia",
+  "version": "1.0.0",
+  "description": "Sistema de agendamento para barbearia",
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "dev": "cd backend && npm run dev",
+    "start": "cd backend && npm start",
+    "build": "cd frontend && npm run build",
+    "start-frontend": "cd frontend && npm start"
+  },
+  "keywords": ["barbearia", "agendamento"],
+  "author": "",
+  "license": "ISC"
+}

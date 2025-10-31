@@ -2,8 +2,13 @@ services:
   - type: web
     name: barbearia-backend
     env: node
+    region: oregon
+    plan: free
     buildCommand: cd backend && npm install
     startCommand: cd backend && npm start
+    healthCheckPath: /
     envVars:
       - key: NODE_VERSION
         value: 22.16.0
+      - key: NODE_ENV
+        value: production

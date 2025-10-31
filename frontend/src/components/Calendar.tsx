@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "./Calendar.module.css";
+import { API_URL } from "@/config/api";
 
 interface Agendamento {
   id: number;
@@ -41,7 +42,7 @@ export default function Calendar({ onSelectDateTime, serviceDuration = 30 }: Cal
     setIsLoadingHorarios(true);
     
     try {
-      const response = await fetch(`http://localhost:4000/horarios-disponiveis?data=${dateStr}&duracao=${serviceDuration}`);
+      const response = await fetch(`${API_URL}/horarios-disponiveis?data=${dateStr}&duracao=${serviceDuration}`);
       if (response.ok) {
         const data = await response.json();
         const list = data.horariosDisponiveis || [];
@@ -95,13 +96,13 @@ export default function Calendar({ onSelectDateTime, serviceDuration = 30 }: Cal
 
   useEffect(() => {
     // Buscar agendamentos existentes
-    fetch("http://localhost:4000/agendamentos")
+    fetch(`${API_URL}/agendamentos`)
       .then(res => res.json())
       .then(data => setAgendamentos(data))
       .catch(err => console.error("Erro ao buscar agendamentos:", err));
 
     // Buscar dias indisponíveis
-    fetch("http://localhost:4000/dias-indisponiveis")
+    fetch(`${API_URL}/dias-indisponiveis`)
       .then(res => res.json())
       .then(data => setDiasIndisponiveis(data))
       .catch(err => console.error("Erro ao buscar dias indisponíveis:", err));

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./AdminDashboard.module.css";
+import { API_URL } from "@/config/api";
 
 interface Agendamento {
   id: number;
@@ -181,7 +182,7 @@ export default function AdminDashboard() {
 
   const buscarDiasIndisponiveis = async () => {
     try {
-      const res = await fetch('http://localhost:4000/dias-indisponiveis');
+      const res = await fetch('${API_URL}/dias-indisponiveis');
       if (res.ok) {
         const data = await res.json();
         setDiasIndisponiveis(Array.isArray(data) ? data : []);
@@ -224,8 +225,8 @@ export default function AdminDashboard() {
 
       const isEditing = editandoIndisponibilidade !== null;
       const url = isEditing 
-        ? `http://localhost:4000/dias-indisponiveis/${editandoIndisponibilidade}`
-        : 'http://localhost:4000/dias-indisponiveis';
+        ? `${API_URL}/dias-indisponiveis/${editandoIndisponibilidade}`
+        : '${API_URL}/dias-indisponiveis';
       
       const method = isEditing ? 'PUT' : 'POST';
 
@@ -292,7 +293,7 @@ export default function AdminDashboard() {
     }
 
     try {
-      const res = await fetch(`http://localhost:4000/dias-indisponiveis/${id}`, {
+      const res = await fetch(`${API_URL}/dias-indisponiveis/${id}`, {
         method: 'DELETE'
       });
 
@@ -312,7 +313,7 @@ export default function AdminDashboard() {
   const buscarAgendamentos = async () => {
     setLoading(true);
     try {
-      let url = "http://localhost:4000/agendamentos?";
+      let url = "${API_URL}/agendamentos?";
       const params = new URLSearchParams();
       
       if (viewMode === "hoje") {
@@ -350,7 +351,7 @@ export default function AdminDashboard() {
 
   const atualizarStatus = async (id: number, novoStatus: string) => {
     try {
-      const res = await fetch(`http://localhost:4000/agendamentos/${id}`, {
+      const res = await fetch(`${API_URL}/agendamentos/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: novoStatus })
@@ -383,7 +384,7 @@ export default function AdminDashboard() {
     if (!confirm("Tem certeza que deseja deletar este agendamento?")) return;
     
     try {
-      const res = await fetch(`http://localhost:4000/agendamentos/${id}`, {
+      const res = await fetch(`${API_URL}/agendamentos/${id}`, {
         method: "DELETE"
       });
       

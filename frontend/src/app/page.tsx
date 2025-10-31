@@ -2,6 +2,7 @@
 import styles from "./page.module.css";
 import { useState } from "react";
 import Calendar from "../components/Calendar";
+import { API_URL } from "@/config/api";
 
 interface Servico {
   nome: string;
@@ -110,7 +111,7 @@ export default function Home() {
         duracao: getSelectedServiceDuration()
       };
       
-      const res = await fetch("http://localhost:4000/agendamentos", {
+      const res = await fetch("${API_URL}/agendamentos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(agendamentoData)
@@ -224,3 +225,4 @@ export default function Home() {
     </div>
   );
 }
+
